@@ -1,0 +1,40 @@
+server:
+  error.include-message: always
+
+spring:
+  application:
+    name: task
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate.ddl-auto: create-drop
+    show-sql: true
+    properties.hibernate:
+      dialect: org.hibernate.dialect.PostgreSQLDialect
+      format_sql: true
+
+api:
+  prefix: api
+  version: v1
+  company: company
+  get: get/id
+  get-all: get/all
+  create: create
+  update: update
+  delete: delete/id
+
+message:
+  info-operation-started: The operation '{}' has started
+  info-operation-finished: The operation '{}' has finished successfully
+  info-get: get
+  info-get-all: get all
+  info-create: create
+  info-update: update
+  info-delete: delete
+  error-operation-exception: The operation has finished with the exception
+  error-name-exist: A company with the given name already exists
+  error-entity-not-exist: A company with the given id does not exist
+  error-name-empty: The given company name is empty
+  error-id-empty: The given company ID is empty
